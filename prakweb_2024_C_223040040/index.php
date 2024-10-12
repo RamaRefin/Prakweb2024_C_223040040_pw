@@ -18,8 +18,9 @@ $buku = query(" SELECT * FROM buku");
 <body>
 
 
+<h1> Daftar Buku </h1>
 
-            <h1> Daftar Buku </h1>
+<a href="tambah.php">Tambah Data Buku</a>
 
     <table border="1" cellpadding="10" cellspacing="0">
 
@@ -39,12 +40,12 @@ $buku = query(" SELECT * FROM buku");
         <td><?= $i; ?></td>
         <td>
             <a href="">ubah</a>
-            <a href="">hapus</a>
+            <a href="hapus.php?id=<?= $row["id_buku"]; ?>" onclick="return confirm('Yakin ingin menghapus?');">hapus</a>
         </td>
-        <td><img src="img/<?php echo $row["gambar"]; ?>" width=50></td>
-        <td><?=  $row = ["Nama Buku"]; ?></td>
-        <td><?=  $row = ["Penulis"]; ?></td>
-        <td><?=  $row = ["Tahun terbit"]; ?></td>
+        <td><img src="img/<?= $row["gambar"]; ?>" width=50></td>
+        <td><?=  $row ["Judul_buku"]; ?></td>
+        <td><?=  $row ["Penulis"]; ?></td>
+        <td><?=  $row ["tahun_terbit"]; ?></td>
 </tr>
 <?php $i++; ?>
 <?php endforeach; ?>
