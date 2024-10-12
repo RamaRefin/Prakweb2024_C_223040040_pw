@@ -2,6 +2,16 @@
 
 require 'functions.php';
 $buku = query(" SELECT * FROM buku");
+
+
+// tombol cari 
+if( isset($_POST["cari"]) ) {
+    $buku = cari($_POST["keyword"]);
+
+}
+
+
+
 ?>
 
 
@@ -21,6 +31,19 @@ $buku = query(" SELECT * FROM buku");
 <h1> Daftar Buku </h1>
 
 <a href="tambah.php">Tambah Data Buku</a>
+
+<br><br>
+
+<form action="" method="post">
+
+    <input type="text" name="keyword" size="40" autofocus placeholder="Buku apa yang ingin dicari.." autocomplete="off">
+    <button type="submit" name="cari">Cari</button>
+
+</from>
+
+<br><br>
+
+
 
     <table border="1" cellpadding="10" cellspacing="0">
 

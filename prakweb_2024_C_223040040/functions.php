@@ -67,4 +67,13 @@ function ubah($data) {
 }
 
 
+function cari($keyword) {
+    $query  =  "SELECT * FROM buku 
+                WHERE 
+                judul_buku LIKE '%$keyword%' 
+                ";
+            return query($query);
+}
+
+
 ?>
