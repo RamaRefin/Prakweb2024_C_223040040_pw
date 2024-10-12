@@ -39,7 +39,7 @@ $buku = query(" SELECT * FROM buku");
 <tr>
         <td><?= $i; ?></td>
         <td>
-            <a href="">ubah</a>
+            <a href="ubah.php?id=<?= $row["id_buku"]; ?>">ubah</a>
             <a href="hapus.php?id=<?= $row["id_buku"]; ?>" onclick="return confirm('Yakin ingin menghapus?');">hapus</a>
         </td>
         <td><img src="img/<?= $row["gambar"]; ?>" width=50></td>
