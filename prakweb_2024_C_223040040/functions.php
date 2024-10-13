@@ -70,7 +70,8 @@ function ubah($data) {
 function cari($keyword) {
     $query  =  "SELECT * FROM buku 
                 WHERE 
-                judul_buku LIKE '%$keyword%' 
+                judul_buku LIKE '%$keyword%' OR
+                penulis LIKE '%$keyword%' 
                 ";
             return query($query);
 }
